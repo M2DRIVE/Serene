@@ -1,4 +1,5 @@
 //First Commit
+
 const Discord = require('discord.js');  
 const client = new Discord.Client();
 const { token } = require('../config.json');
