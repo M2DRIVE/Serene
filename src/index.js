@@ -1,10 +1,8 @@
-//First Commit
-
 const Discord = require('discord.js');  
 const client = new Discord.Client();
 const { token } = require('../config.json');
 
-const PREFIX = '$';
+const PREFIX = '-';
 
 const fs = require('fs');
 client.commands = new Discord.Collection();
@@ -21,8 +19,9 @@ client.on('ready', () => {
 client.on('message', msg => {
     if(!msg.content.startsWith(PREFIX)) return;
     let command = msg.content.substring(PREFIX.length).toLowerCase().split(' ');
-    if(command[0] === 'test') client.commands.get('ping').execute(msg);
+    if(command[0] === 'ping') client.commands.get('ping').execute(msg);
     else if(command[0] === 'roles') client.commands.get('roles').execute(msg, client);
+    else if(command[0] === 'help') client.commands.get('help').execute(msg, Discord);
 });
 
 client.login(token);
