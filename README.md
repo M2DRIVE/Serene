@@ -1,2 +1,3 @@
 # TODO 
-- Add 1 AM tool
+~~- Add !help command~~
+- Add 1 AM tool 
