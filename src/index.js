@@ -20,7 +20,7 @@ client.on('message', msg => {
     if(!msg.content.startsWith(PREFIX)) return;
     let command = msg.content.substring(PREFIX.length).toLowerCase().split(' ');
     if(command[0] === 'ping') client.commands.get('ping').execute(msg);
-    else if(command[0] === 'roles') client.commands.get('roles').execute(msg, client);
+    else if(command[0] === 'roles' || command[0] === 'role') client.commands.get('roles').execute(msg, client);
     else if(command[0] === 'help') client.commands.get('help').execute(msg, Discord);
 });
 

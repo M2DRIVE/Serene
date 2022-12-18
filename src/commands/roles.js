@@ -13,7 +13,7 @@ module.exports = {
             // -roles create name color
             if(command[1] === 'create') {
                 var roleName = command.slice(2, command.length-1).join(' ').replace(/['"]+/g, '');
-                if(roles[1].includes(roleName)) {
+                if(roles[0].includes(roleName)) {
                     msg.channel.send('❌ Role already created with that name.');
                     return;
                 }
@@ -31,7 +31,7 @@ module.exports = {
             // -roles delete name
             else if(command[1] === 'delete') {
                 var roleName = command.slice(2).join(' ').replace(/['"]+/g, '');
-                if(!roles[1].includes(roleName)) {
+                if(!roles[0].includes(roleName)) {
                     msg.channel.send('❌ Not a valid role.');
                     return;
                 }
@@ -48,7 +48,7 @@ module.exports = {
             // -roles add @user name
             else if(command[1] === 'add') {
                 var roleName = command.slice(3).join(' ').replace(/['"]+/g, '')
-                if(!roles[1].includes(roleName)) {
+                if(!roles[0].includes(roleName)) {
                     msg.channel.send('❌ Not a valid role.');
                     return;
                 }
@@ -59,7 +59,7 @@ module.exports = {
             // -roles remove @user name
             else if(command[1] === 'remove') {
                 var roleName = command.slice(3).join(' ').replace(/['"]+/g, '')
-                if(!roles[1].includes(roleName)) {
+                if(!roles[0].includes(roleName)) {
                     msg.channel.send('❌ Not a valid role.');
                 }
 
