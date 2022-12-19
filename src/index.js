@@ -1,6 +1,7 @@
 const Discord = require('discord.js');  
 const client = new Discord.Client();
 const { token } = require('../config.json');
+//const host = require('../server/server.js');
 
 const PREFIX = '-';
 
@@ -24,4 +25,5 @@ client.on('message', msg => {
     else if(command[0] === 'help') client.commands.get('help').execute(msg, Discord);
 });
 
+//host();
 client.login(token);
