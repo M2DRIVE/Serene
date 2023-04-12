@@ -16,16 +16,20 @@ module.exports = {
         }
 
         else if (isCommand) {
-            if (msg.content.split(' ').pop() === 'on') {
+            if (msg.content.split(' ')[3] === 'on') {
                 enabled
                     ? msg.channel.send('Night Goblin Mode is already enabled')
                     : (enabled = true, msg.channel.send('✅ Night Goblin Mode Enabled'));
             }
 
-            else {
+            else if (msg.content.split(' ')[3] === 'off') {
                 !enabled
                     ? msg.channel.send('Night Goblin Mode is already disabled')
                     : (enabled = false, msg.channel.send('✅ Night Goblin Mode Disabled'));
+            }
+
+            else {
+                msg.channel.send('❌ Please send a valid command.');
             }
         }
 

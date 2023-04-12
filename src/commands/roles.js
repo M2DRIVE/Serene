@@ -113,6 +113,6 @@ module.exports = {
       if (Object.keys(commands).includes(command)) 
         commands[command]();
       else 
-        msg.channel.send('❌ Pleasesend a valid command.');
+        msg.channel.send('❌ Please send a valid command.');
     }
 }
